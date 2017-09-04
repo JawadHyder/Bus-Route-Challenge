@@ -4,13 +4,14 @@
 cd $(dirname $0)
 
 dev_build() {
-  # Do what you need to package your app, e.g. mvn package
+  mvn package -f ./solution/pom.xml
   true
 }
 
 dev_run() {
   # Do what you need to run your app in the foreground
-  # e.g. java -jar target/magic.jar $*
+  # e.g. java -jar target/magic.jar 
+  java -jar ./solution/target/direct-bus-route.jar $*
   sleep 600
 }
 

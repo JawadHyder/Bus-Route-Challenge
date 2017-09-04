@@ -2,6 +2,7 @@ package com.goeuro.challenge;
 
 import static spark.Spark.get;
 import static spark.Spark.post;
+import static spark.SparkBase.port;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -36,6 +37,7 @@ public class BusRouteChallenge {
             throw new RuntimeException("This service needs valid path to the 'Bus Routes Data File' as an argument which can be read.");
         }
 
+        port(8088);
         get("/api/direct", new Route() {
             @Override
             public Object handle(Request request, Response response) {
